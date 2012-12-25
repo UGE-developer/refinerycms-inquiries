@@ -12,7 +12,7 @@
         <label class='stripped'><%= t('.to') %></label>
       </td>
       <td>
-        <%= checkbox_tag "send_confirmation[][#{locale.to_s}]", "Send confirmation?", Refinery::Inquiries::Setting.send_confirmation(locale),
+        <%= check_box_tag "send_confirmation[][#{locale.to_s}]", "Send confirmation?", Refinery::Inquiries::Setting.send_confirmation(locale),
                              :class => 'widest' %>
       </td>
     </tr>

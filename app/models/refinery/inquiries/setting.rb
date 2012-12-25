@@ -46,6 +46,12 @@ module Refinery
                                         :scoping => "inquiries")
         end
 
+        def notification_sender
+          Refinery::Setting.find_or_set(:inquiry_notification_sender,
+                                        ((Refinery::Role[:refinery].users.first.email rescue nil) if defined?(Refinery::Role)).to_s,
+                                        :scoping => "inquiries")
+        end
+
         def notification_subject
           Refinery::Setting.find_or_set(:inquiry_notification_subject,
                                         "New inquiry from your website",
@@ -56,6 +62,19 @@ module Refinery
           Refinery::Setting.find_or_set(:inquiry_send_confirmation, 
                                         true,
                                         :scoping => "inquiries")
+        end
+
+        def send_confirmation(args)
+          Refinery::Setting.find_or_set(:inquiry_send_confirmation, 
+                                        true,
+                                        :scoping => "inquiries")
+        end
+
+        def send_confirmation=(value)
+          Refinery::Setting.set(:inquiry_send_confirmation, {
+                                    :value => value.first[:en],
+                                    :scoping => "inquiries"
+                                  })
         end
       end
     end

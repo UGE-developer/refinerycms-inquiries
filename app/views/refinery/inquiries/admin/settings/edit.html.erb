@@ -1,4 +1,4 @@
-<% if @setting.name.to_s.titleize == "Inquiry Notification Recipients" %>
+<% if @setting.name.to_s.titleize == "Inquiry Notification Recipients" || @setting.name.to_s.titleize == "Inquiry Notification Sender" %>
   <%= render "notification_recipients_form", :edit => true -%>
 <% else %>
   <%= render "confirmation_email_form", :edit => true -%>

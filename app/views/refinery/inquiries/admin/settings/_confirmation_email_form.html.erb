@@ -12,6 +12,15 @@
         <label class='stripped'><%= t('.to') %></label>
       </td>
       <td>
+        <%= checkbox_tag "send_confirmation[][#{locale.to_s}]", "Send confirmation?", Refinery::Inquiries::Setting.send_confirmation(locale),
+                             :class => 'widest' %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label class='stripped'><%= t('.to') %></label>
+      </td>
+      <td>
         <%= t('.the_customer_making_inquiry') %>
       </td>
     </tr>

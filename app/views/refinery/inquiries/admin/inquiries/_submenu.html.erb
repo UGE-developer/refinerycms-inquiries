@@ -19,6 +19,11 @@
                     :class => "user_comment_icon" %>
     </li>
     <li>
+      <%= link_to "Update sender",
+                    refinery.edit_inquiries_admin_setting_path(:inquiry_notification_sender, :dialog => true, :height => 300),
+                    :class => "user_comment_icon" %>
+    </li>
+    <li>
       <%= link_to t('.edit_confirmation_email'),
                   refinery.edit_inquiries_admin_setting_path(:inquiry_confirmation_body, :dialog => true),
                   :class => "edit_email_icon" %>
